@@ -37,6 +37,10 @@ class MainActivity : AppCompatActivity() {
         Business.business.add(Business("Chan Ching Lok","123456789874","A12546"))
         Business.business.add(Business("Chan Ching Lok","123456789874","A12546"))
         Business.business.add(Business("Chan Ching Lok","123456789874","A12546"))
+        Business.business.add(Business("Chan Ching Lok","123456789874","A12546"))
+        Business.business.add(Business("Chan Ching Lok","123456789874","A12546"))
+        Business.business.add(Business("Chan Ching Lok","123456789874","A12546"))
+        Business.business.add(Business("Chan Ching Lok","123456789874","A12546"))
 
         PService.policyService.add(PService("ching chong ling","123456789874","PS123456","deposit withdrawal"))
         PService.policyService.add(PService("ching chong ling","123456789874","PS123456","deposit withdrawal"))
