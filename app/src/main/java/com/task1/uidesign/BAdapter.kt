@@ -7,9 +7,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.business_list.view.*
 
-class BAdapter (val context: Context, val business:List<Business>):RecyclerView.Adapter<BAdapter.MyViewHolder>(){
+class BAdapter (val context: Context, val business:ArrayList<Business>):RecyclerView.Adapter<BAdapter.MyViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):MyViewHolder{
-        val view = LayoutInflater.from(context).inflate(R.layout.activity_main,parent,false)
+        val view = LayoutInflater.from(context).inflate(R.layout.business_list,parent,false)
         return MyViewHolder(view)
     }
 
@@ -19,26 +19,28 @@ class BAdapter (val context: Context, val business:List<Business>):RecyclerView.
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int){
         val name = business[position]
-        val NRICNo = business[position]
-        val PolicyNo = business[position]
-        holder.setData(name,NRICNo,PolicyNo,position)
+        val nRICNo = business[position]
+        val policyNO = business[position]
+        holder.setData(name,nRICNo,policyNO,position)
     }
 
     inner class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-        var currentBusiness:Business? = null
-        var currentBNRICNo:Business? = null
-        var currentBPolicyNo:Business? = null
+        var currentName:Business? = null
+        var currentNRIC:Business? = null
+        var currentPolicyNo:Business? = null
         var currentBPosition: Int = 0
 
-        fun setData(name:Business?,NRICNo: Business, PolicyNo: Business, Position:Int){
-            itemView.BName.text=name!!.BName
-            itemView.BNRICNo.text=NRICNo!!.BNRICNo
-            itemView.BPolicyNo.text=PolicyNo!!.BPolicyNo
+        fun setData(name:Business?,nRICNo: Business?, policyNO: Business?, Position:Int){
+            itemView.cusName.text=name!!.bName
+            itemView.cusNRICNo.text=nRICNo!!.bNRICNo
+            itemView.cusPolicyNo.text=policyNO!!.bPolicyNo
 
-            this.currentBusiness=name
-            this.currentBNRICNo=NRICNo
-            this.currentBPolicyNo=PolicyNo
+            this.currentName=name
+            this.currentNRIC=nRICNo
+            this.currentPolicyNo=policyNO
             this.currentBPosition=Position
+
+
         }
     }
 
